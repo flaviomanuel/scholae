@@ -4,6 +4,7 @@ const routes = express.Router();
 
 const UserController = require('./controllers/UserController');
 const MessageController = require('./controllers/MessageController');
+const ClassroomController = require('./controllers/ClassroomController');
 
 
 routes
@@ -18,5 +19,7 @@ routes
     .post('/messages', MessageController.create)
     .put('/messages/:id', MessageController.update)
     .delete('/messages/:id', MessageController.delete) 
+    //classrooms
+    .get('/classrooms', ClassroomController.index)
 
 module.exports = routes;
