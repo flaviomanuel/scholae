@@ -9,20 +9,29 @@ module.exports = {
             const classroom =  knex('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .join('messages', 'messages_classrooms.message_id', '=', 'messages.id')
-                .select('messages.*', 'classrooms.classroomName')
+                .select('messages.*', 'classrooms.name')
                 .limit(10)
                 .offset((page - 1) * 10);;
 
             const [count] = await knex('messages').count();
-            console.log(count);
+
 
             res.header('X-Total-Count', count.count)
 
             const results = await classroom;
 
-            return res.json({
-                results
-            });
+            //mudando o nome dos campes "name" e "nickname" do classroom para "classroomName" e "classroomNickname"
+            const serializedClassroom = results.map(classrooms => {
+                return {
+                    ...classrooms,
+                    classroomName: classrooms.name,
+                    classroomNickname: classrooms.nickname,
+
+                }
+            })
+            return res.json(
+                serializedClassroom
+            );
 
         } catch (error) {
             next(error);
