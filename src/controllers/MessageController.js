@@ -5,13 +5,13 @@ module.exports = {
         try {
 
             const { page=1 } = req.query;
-            
+
             const classroom =  knex('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .join('messages', 'messages_classrooms.message_id', '=', 'messages.id')
-                .select('messages.*', 'classrooms.name')
+                .select('messages.*', 'classrooms.name', 'classrooms.nickname')
                 .limit(10)
-                .offset((page - 1) * 10);;
+                .offset((page - 1) * 10);
 
             const [count] = await knex('messages').count();
 
@@ -23,9 +23,13 @@ module.exports = {
             //mudando o nome dos campes "name" e "nickname" do classroom para "classroomName" e "classroomNickname"
             const serializedClassroom = results.map(classrooms => {
                 return {
-                    ...classrooms,
-                    classroomName: classrooms.name,
-                    classroomNickname: classrooms.nickname,
+                    id: classrooms.id,
+                    title: classrooms.title,
+                    description: classroom.description,
+                    created_at: classrooms.created_at,
+                    user_id: classrooms.user_id,
+                    classroomName: classrooms.name.replace(' ', 'º '),
+                    classroomNickname: classrooms.nickname.replace(' ', 'º '),
 
                 }
             })
@@ -52,11 +56,11 @@ module.exports = {
                     Message: 'Messagem não encontrada'
                 });
             }
-            //consulta
+            //consulta das classrooms de message specific 
             const classroom = await knex('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .where('messages_classrooms.message_id', id)
-                .select('classroomName');
+                .select('classrooms.name');
 
             return res.json({
                 message,
