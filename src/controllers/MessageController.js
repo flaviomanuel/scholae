@@ -6,10 +6,16 @@ module.exports = {
 
             const { page=1 } = req.query;
 
-            const classroom =  knex('classrooms')
+            const { id } = req.params;
+
+
+            const classMsgs =  knex('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .join('messages', 'messages_classrooms.message_id', '=', 'messages.id')
-                .select('messages.*', 'classrooms.name', 'classrooms.nickname')
+                .join('users', 'messages.user_id', '=', 'users.id')
+                .select('messages.*','messages_classrooms.classroom_id',
+                 'classrooms.name', 'classrooms.nickname' , 'users.name')
+                 .where('classrooms.id', id)
                 .limit(10)
                 .offset((page - 1) * 10);
 
@@ -18,23 +24,27 @@ module.exports = {
 
             res.header('X-Total-Count', count.count)
 
-            const results = await classroom;
+            const results = await classMsgs;    
 
             //mudando o nome dos campes "name" e "nickname" do classroom para "classroomName" e "classroomNickname"
-            const serializedClassroom = results.map(classrooms => {
+            const serializedClassMsgs = results.map(classMsg => {
+                console.log(classMsg);
                 return {
-                    id: classrooms.id,
-                    title: classrooms.title,
-                    description: classroom.description,
-                    created_at: classrooms.created_at,
-                    user_id: classrooms.user_id,
-                    classroomName: classrooms.name.replace(' ', 'º '),
-                    classroomNickname: classrooms.nickname.replace(' ', 'º '),
+                    id: classMsg.id,
+                    title: classMsg.title,
+                    description: classMsg.description,
+                    created_at: classMsg.created_at,
+                    user_id: classMsg.user_id,
+                    classroom_id: classMsg.classroom_id,
+                    classroomName: classMsg.name.replace(' ', 'º '),
+                    classroomNickname: classMsg.nickname.replace(' ', 'º '),
+                    name: classMsg.name
 
                 }
             })
+            
             return res.json(
-                serializedClassroom
+                serializedClassMsgs
             );
 
         } catch (error) {

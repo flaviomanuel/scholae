@@ -14,7 +14,7 @@ routes
     .put('/users/:id', UserController.update)
     .delete('/users/:id', UserController.delete)
     //messages
-    .get('/messages', MessageController.index)
+    .get('/messagesclassrooms/:id', MessageController.index)
     .get('/messages/:id', MessageController.show)
     .post('/messages', MessageController.create)
     .put('/messages/:id', MessageController.update)
