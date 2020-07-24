@@ -1,9 +1,11 @@
 const knex = require("../database");
+const bcrypt = require('bcrypt');
 
 module.exports = {
     async index(req, res, next) {
         try {
-            const results = await knex('users');
+            const results = await knex('users')
+            .select('name', 'email' );
 
             return res.json(results);
         } catch (error) {
@@ -19,11 +21,16 @@ module.exports = {
                 password
             } = req.body;
 
-            await knex('users').insert({
-                name,
-                email,
-                password
-            });
+            bcrypt.hash(password, 10)
+            .then(hashedPassword => {
+               return knex("users").insert({
+                  name,
+                  email,
+                  password: hashedPassword
+               })
+               .catch(error => next(error))
+            })
+            
 
             return res.status(201).send();
 
