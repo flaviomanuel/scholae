@@ -13,12 +13,14 @@ routes
     .post('/users', UserController.create)
     .put('/users/:id', UserController.update)
     .delete('/users/:id', UserController.delete)
+    .post('/users/authenticate', UserController.authenticate)
     //messages
     .get('/messagesclassrooms/:id', MessageController.index)
     .get('/messages/:id', MessageController.show)
     .post('/messages', MessageController.create)
     .put('/messages/:id', MessageController.update)
-    .delete('/messages/:id', MessageController.delete) 
+    .delete('/messages/:id', MessageController.delete)
+    
     //classrooms
     .get('/classrooms', ClassroomController.index)
 
