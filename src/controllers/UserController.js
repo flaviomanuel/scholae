@@ -51,8 +51,6 @@ module.exports = {
         .where({ email }) 
         .first();
         
-
-        
         if(!user){
             return res.status(400).send({ error: 'Email Invalido' })
         }

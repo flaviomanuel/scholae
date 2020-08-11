@@ -57,9 +57,10 @@ module.exports = {
                 id
             } = req.params;
 
-            const message = await knex('messages').where({
-                id
-            }).first();
+            const message = await knex('messages')
+            .join('users', 'messages.user_id', '=', 'users.id')
+            .first()
+            .where('messages.id', id);
 
             if (!message) {
                 return res.status(400).json({
