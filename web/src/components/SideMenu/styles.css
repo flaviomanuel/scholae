@@ -1,0 +1,35 @@
+#side-menu {
+    width: 18vw;
+    height: 50vh;
+}
+
+#side-menu .options-group {
+    margin-top: 40px;
+}
+#side-menu .options-group .option a{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+    padding-left: 10px;
+    
+}
+#side-menu .options-group .option a:hover{
+    background-color: #F1F3F4;
+    border-radius: 10px;
+    
+}
+
+#side-menu .options-group .option + .option{
+    margin-top: 10px;
+}
+
+#side-menu .options-group .option a img {
+    width: 16px;
+    height: 16px;
+    margin-left: 120px;
+}
+

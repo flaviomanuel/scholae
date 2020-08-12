@@ -1,0 +1,24 @@
+:root {
+    font-size: 60%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body, #root {
+    height: 100vh;
+}
+
+body,
+input, 
+button,
+textarea{
+    font-family: 'Ubuntu';
+}
+
+.container {
+    width: 90vw;
+    margin: 0 auto
+}
