@@ -3,9 +3,6 @@
     height: 50vh;
 }
 
-#side-menu .options-group {
-    margin-top: 40px;
-}
 #side-menu .options-group .option a{
     height: 50px;
     display: flex;
