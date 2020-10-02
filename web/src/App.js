@@ -1,12 +1,15 @@
 import React from 'react';
 
-import PageHome from './pages/PageHome'
-
 import './assets/styles/global.css';
+
+import Routes from './routes';
 
 function App() {
   return (
-    <PageHome/>
+   
+
+      <Routes/>
+
   );
 }
 

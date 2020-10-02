@@ -1,0 +1,95 @@
+#home-page {
+    width: 100vw;
+    height: 100vh;
+
+
+    color: #ffffff;
+}
+header {
+    background-color: var(--color-gray-header);
+    width: 100vw;
+    flex-direction: column;
+    text-align: center; 
+    justify-items: center;
+    
+}
+
+header img {
+    height: 3.5rem;
+    margin: 1.5rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+} 
+main .buttons-group{ 
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;   
+    margin-top: 15vh;
+    border: solid 3px var(--color-gray-header);
+    
+}
+main .buttons-group a {
+    background-color: var(--color-yellow-main);
+    text-decoration: none;
+    color: #ffffff; 
+    height: 9rem;
+    width: 90vw;
+    
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.8;
+    margin: 5px;
+}
+main .buttons-group a:last-child {
+    margin-top: 25px;
+
+}
+
+footer {
+    background: var(--color-gray-header);
+    width: 100%;
+    position:absolute;
+    bottom:0;
+}
+footer .footer-group{
+    display: block;
+    justify-content: center;
+    align-content: center;
+}
+footer .footer-group p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 1.3rem;
+    color: #555555; 
+    margin: 2rem 0rem;
+}
+
+
+@media(min-width: 900px){
+    main .buttons-group {
+        flex-direction: initial;
+        justify-items: center;
+
+        width: 70vw;
+    }
+    main .buttons-group a:last-child{
+        margin-top: 0.8rem;
+    }
+
+    main .buttons-group a {
+        justify-items: center;
+        align-items: center;
+        height: 11rem;
+    }
+
+}
