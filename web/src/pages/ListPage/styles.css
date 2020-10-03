@@ -1,0 +1,34 @@
+#list-page {
+    width: 100vw;
+    height: 100vh;
+
+
+    color: #ffffff;
+}
+.header {
+    width: 100vw;
+    background-color: var(--color-gray-header);
+    display: flex;
+}
+.header .header-content{
+    width: 80vw;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.header img {
+    height: 3.5rem;
+    margin: 1.5rem;
+}
+    
+.header .header-content .header-menu  {
+    background-color: var(--color-yellow-main);
+}
+.header .header-content .header-menu a {
+    color: black;
+    margin: 3rem 1.5rem;
+
+}
