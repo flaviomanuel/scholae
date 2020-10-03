@@ -1,4 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
+import Footer from '../../components/Footer';
 
 import logoImg from '../../assets/images/scholaeYellow.png';
 
@@ -15,19 +18,13 @@ function HomePage(){
         
         <main>
           <div className="buttons-group">
-           <a href="/">Acessar salas</a>
-            <a href="/">Registar aviso</a>
+           <Link to="/list-message">Acessar salas</Link>
+            <Link to="/login">Registar aviso</Link>
           </div>
         </main>
 
-        <footer>
+        <Footer/>
 
-          <div className="footer-group">
-            <p>Copyright © 2020 - Tocatins</p>
-            <p>Design and development by Scholae’s Team</p>
-          </div>
-          
-        </footer>
        </div>
      </div>
     )
