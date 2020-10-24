@@ -1,21 +1,19 @@
 import React from 'react';
+import  { HeaderContainer, HeaderContent, HeaderLogo } from './styles'
+
+import DropdownMenu from './components/DropdownMenu';
 
 import logoImg from '../../assets/images/scholaeYellow.png';
-import DropdownMenu from '../DropdownMenu';
-
-import './styles.css'
 
 function Header() {
     return (
-        <div className="header">
-            <div className="header-content">
-
-                <img src={logoImg} alt="Logo scholae"/>
+        <HeaderContainer>
+            <HeaderContent>
+                <HeaderLogo src={logoImg}/>
 
                 <DropdownMenu/>
-            </div>
-       
-     </div>
+            </HeaderContent>
+        </HeaderContainer>
     )
 }
 

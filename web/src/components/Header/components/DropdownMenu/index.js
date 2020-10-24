@@ -9,7 +9,7 @@ import {
     ArrowLeft, 
     LeftMenuContainer} from './styles';
     
-import Submenu from './components/Submenu/index'
+import Submenu from '../Submenu/index'
 
 
 function DropdownMenu() {

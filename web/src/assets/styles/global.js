@@ -1,3 +1,6 @@
+import styled, { createGlobalStyle} from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
 :root {
     font-size: 60%;
 
@@ -29,11 +32,7 @@ textarea {
     font: 500 1.6rem Roboto;
 }
 
-.container {
-    width: 90vw;
-    max-width: 700px;
-    
-}
+
 
 @media(min-width: 700px) {
     :root{
@@ -45,3 +44,13 @@ ul, li {
     text-decoration: none;
     list-style: none;
 }
+
+`;
+
+export const BoxContainer = styled.div`
+    width: 90vw;
+    max-width: 700px;
+
+`;
+
+export default GlobalStyle;

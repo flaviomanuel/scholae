@@ -1,20 +1,20 @@
 import React from 'react';
-import { BiChevronDown} from 'react-icons/bi'
 
+import { ListPageContainer } from './styles';
+import { BoxContainer } from '../../assets/styles/global'
 import Header from '../../components/Header';
 
-import logoImg from '../../assets/images/scholaeYellow.png';
-
-import './styles.css'
 
 function ListPage(){
     return (
-        <div id="list-page">
-            <div className="container" id="list-page-content">
+        <ListPageContainer>
+            <BoxContainer>
                 <Header/>
-              
-            </div>
-        </div>
+
+
+                
+            </BoxContainer>
+        </ListPageContainer>
         
     )
 }
