@@ -5,7 +5,6 @@ export const HeaderContainer = styled.div`
     height: 8rem;
 
     background-color: var(--color-gray-header);
-    display: flex;
 `; 
 
 
@@ -19,7 +18,7 @@ export const HeaderContent = styled.div`
     `;
 
 export const HeaderLogo = styled.img`
-   height: 3.5rem;
+   height: 4rem;
     margin: 1.5rem;
 
 `;

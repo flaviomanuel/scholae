@@ -47,10 +47,13 @@ ul, li {
 
 `;
 
-export const BoxContainer = styled.div`
-    width: 90vw;
-    max-width: 700px;
 
+
+export const Container = styled.div`
+   width: 100vw;
+    height: 100vh;
+    
+    color: #ffffff; 
 `;
 
 export default GlobalStyle;

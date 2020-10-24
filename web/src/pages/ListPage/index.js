@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { ListPageContainer } from './styles';
+import { Container } from '../../assets/styles/global';
 import { BoxContainer } from '../../assets/styles/global'
 import Header from '../../components/Header';
 
 
 function ListPage(){
     return (
-        <ListPageContainer>
-            <BoxContainer>
+        <Container>
+           
                 <Header/>
 
 
                 
-            </BoxContainer>
-        </ListPageContainer>
+           
+        </Container>
         
     )
 }

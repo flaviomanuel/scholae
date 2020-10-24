@@ -1,5 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
+import { HeaderLogo } from '../../components/Header/styles'
+import { Container } from '../../assets/styles/global';
+import {
+        HeaderCenterContainer, 
+        Main, 
+        ButtonsGroup, 
+        LinkA } from './styles';
+
 
 import Footer from '../../components/Footer';
 
@@ -9,24 +17,21 @@ import './styles.css';
 
 function HomePage(){
     return  (
-     <div id="home-page">
-       <div className="container" id="page-home-content">
-
-         <header className="logo-container">
-          <img src={logoImg} alt="logo scholae"/>
-         </header>
+     <Container>
+        <HeaderCenterContainer>
+          <HeaderLogo src={logoImg} />
+        </HeaderCenterContainer>
         
-        <main>
-          <div className="buttons-group">
-           <Link to="/list-message">Acessar salas</Link>
-            <Link to="/login">Registar aviso</Link>
-          </div>
-        </main>
+        <Main>
+          <ButtonsGroup>
+           <LinkA to="/list-message">Acessar salas</LinkA>
+            <LinkA to="/login">Registar aviso</LinkA>
+          </ButtonsGroup>
+        </Main>
 
         <Footer/>
-
-       </div>
-     </div>
+       </Container>
+    
     )
 }
 

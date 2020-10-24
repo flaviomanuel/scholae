@@ -12,15 +12,14 @@ export const DropdownContainer = styled.ul`
 export const MenuContainer = styled.li`
     background-color: var(--color-yellow-main);
     border-radius: 8px;
-    display: fixed;
 `;
 
 export const FirstItem = styled.a`
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: bold;
     text-decoration: none;
-    padding: 0.6rem 4rem;
+    padding: 0.8rem 4rem;
     
     display: flex;
     justify-content: space-between;
