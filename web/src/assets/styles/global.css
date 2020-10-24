@@ -40,3 +40,8 @@ textarea {
         font-size: 62.5% 
     }
 }
+
+ul, li {
+    text-decoration: none;
+    list-style: none;
+}

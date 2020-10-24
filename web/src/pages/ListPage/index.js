@@ -1,4 +1,7 @@
 import React from 'react';
+import { BiChevronDown} from 'react-icons/bi'
+
+import Header from '../../components/Header';
 
 import logoImg from '../../assets/images/scholaeYellow.png';
 
@@ -8,21 +11,11 @@ function ListPage(){
     return (
         <div id="list-page">
             <div className="container" id="list-page-content">
-                <div className="header">
-                    <div className="header-content">
-
-                        <img src={logoImg} alt="Logo scholae"/>
-
-                        <div className="header-menu">
-                            <a href="/">
-                                Opções 
-                            </a>
-                        </div>
-                    </div>
-                 </div>
+                <Header/>
+              
             </div>
-
         </div>
+        
     )
 }
 
