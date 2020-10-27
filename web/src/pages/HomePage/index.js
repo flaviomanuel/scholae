@@ -7,13 +7,12 @@ import {
         Main, 
         ButtonsGroup, 
         LinkA } from './styles';
-
+import BoxContainer from '../../assets/styles/global'
 
 import Footer from '../../components/Footer';
 
 import logoImg from '../../assets/images/scholaeYellow.png';
 
-import './styles.css';
 
 function HomePage(){
     return  (
@@ -22,13 +21,13 @@ function HomePage(){
           <HeaderLogo src={logoImg} />
         </HeaderCenterContainer>
         
-        <Main>
-          <ButtonsGroup>
-           <LinkA to="/list-message">Acessar salas</LinkA>
-            <LinkA to="/login">Registar aviso</LinkA>
-          </ButtonsGroup>
-        </Main>
-
+          <Main>
+            <ButtonsGroup>
+            <LinkA to="/list-message">Acessar salas</LinkA>
+              <LinkA to="/login">Registar aviso</LinkA>
+            </ButtonsGroup>
+          </Main>
+        
         <Footer/>
        </Container>
     

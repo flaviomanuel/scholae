@@ -6,7 +6,6 @@ import { HeaderContainer } from '../../components/Header/styles'
 export const HeaderCenterContainer = styled(HeaderContainer)`
     flex-direction: column;
     text-align: center; 
-    justify-items: center;
 `;
 
 export const Main = styled.main`

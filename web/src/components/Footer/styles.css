@@ -1,15 +1,15 @@
-footer {
+/* footer {
     background: var(--color-gray-header);
     width: 100%;
     position:absolute;
     bottom:0;
-}
-footer .footer-group{
+} */
+/* footer .footer-group{
     display: block;
     justify-content: center;
     align-content: center;
-}
-footer .footer-group p {
+} */
+/* footer .footer-group p {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,4 +17,4 @@ footer .footer-group p {
     font-size: 1.3rem;
     color: #555555; 
     margin: 2rem 0rem;
-}
+} */

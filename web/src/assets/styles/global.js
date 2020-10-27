@@ -56,4 +56,15 @@ export const Container = styled.div`
     color: #ffffff; 
 `;
 
+export const BoxContainer = styled.div`
+    width: 80vw;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+`;
+
+
+
 export default GlobalStyle;

@@ -1,18 +1,18 @@
 import React from 'react';
 
-import './styles.css';
+import { FooterContainer, FooterGroup,FooterText } from './styles';
 
 
 function Footer() {
     return (
-        <footer>
+        <FooterContainer>
 
-        <div className="footer-group">
-          <p>Copyright © 2020 - Tocatins</p>
-          <p>Design and development by Scholae’s Team</p>
-        </div>
-        
-      </footer>
+          <FooterGroup>
+            <FooterText>Copyright © 2020 - Tocatins</FooterText>
+            <FooterText>Design and development by Scholae’s Team</FooterText>
+          </FooterGroup>
+
+      </FooterContainer>
     )
 }
 
