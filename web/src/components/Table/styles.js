@@ -7,7 +7,7 @@ export const TableContainer = styled.table`
     border-collapse: collapse;
     
     width: 100%;
-    margin: 50px auto 0 auto;
+    margin: 0 auto 0 auto;
     border: 2px solid #ddd;
 
 
