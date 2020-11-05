@@ -45,7 +45,7 @@ export const LinkA = styled(Link)`
     font-size: 1.8;
     margin: 5px;
 
-    @media(min-width: 900px){
+    @media(min-width: 700px){
         justify-items: center;
         align-items: center;
         height: 11rem;

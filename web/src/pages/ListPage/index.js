@@ -9,14 +9,11 @@ function ListPage(){
     return (
         <Container>       
             <Header/>
-        <BoxContainer>
-            <Table/>
-
-        </BoxContainer>
             
-    
+            <BoxContainer>
+                <Table/>
+            </BoxContainer>
 
-                
            <Footer/>
         </Container>
         

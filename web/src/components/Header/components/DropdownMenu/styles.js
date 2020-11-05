@@ -4,6 +4,7 @@ import { BiChevronLeft} from 'react-icons/bi'
 export const DropdownContainer = styled.ul`
     border-radius: 8px 8px 0px 0px;
     cursor: pointer;
+ 
 
     position: relative;
     top: 20px; 
@@ -24,6 +25,16 @@ export const FirstItem = styled.a`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media(max-width: 500px) {
+    padding: 0.5rem 2rem;
+ 
+}
+
+@media(max-width: 350px) {
+    padding: 0.5rem 1rem;
+
+}
 `;
 
 

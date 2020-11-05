@@ -21,4 +21,8 @@ export const HeaderLogo = styled.img`
    height: 4rem;
     margin: 1.5rem;
 
+@media(max-width: 350px) {
+    height: 3rem;
+    margin-top: 2rem;
+}
 `;

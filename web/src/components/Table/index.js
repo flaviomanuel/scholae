@@ -4,8 +4,10 @@ import { TableContainer,
          Thead, 
          Tbody, 
          TH, 
+         Caption,
+         CaptionContainer,
+         TextCaption,
          IconCaption, 
-         Caption
           } from "./styles";
 
 import TableLine from './components/TableLine';
@@ -17,8 +19,10 @@ function Table() {
           
             
             <Caption>
-                <IconCaption/>
-                Listagem de avisos
+                <CaptionContainer>
+                    <IconCaption/>
+                    <TextCaption>Listagem de avisos</TextCaption>
+                </CaptionContainer>
             </Caption>
             
 
