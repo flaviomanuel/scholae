@@ -58,10 +58,11 @@ export const Container = styled.div`
 
 export const BoxContainer = styled.div`
     width: 80vw;
-    margin: 50px auto 0 auto;
+    
+    margin: 6rem auto 6rem auto;
 
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     /* align-items: center; */
 `;
 

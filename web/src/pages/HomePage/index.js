@@ -7,7 +7,7 @@ import {
         Main, 
         ButtonsGroup, 
         LinkA } from './styles';
-import BoxContainer from '../../assets/styles/global'
+import {BoxContainer} from '../../assets/styles/global'
 
 import Footer from '../../components/Footer';
 
@@ -21,12 +21,14 @@ function HomePage(){
           <HeaderLogo src={logoImg} />
         </HeaderCenterContainer>
         
-          <Main>
+          <BoxContainer>
+            <Main>
             <ButtonsGroup>
             <LinkA to="/list-message">Acessar salas</LinkA>
               <LinkA to="/login">Registar aviso</LinkA>
             </ButtonsGroup>
-          </Main>
+            </Main>
+          </BoxContainer>
         
         <Footer/>
        </Container>

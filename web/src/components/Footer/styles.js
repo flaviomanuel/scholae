@@ -5,7 +5,6 @@ export const FooterContainer = styled.footer`
     width: 100vw;
 
     position: absolute;
-    bottom: 0;
     left: 0;
 
     
@@ -13,10 +12,10 @@ export const FooterContainer = styled.footer`
 `;
 
 export const FooterGroup = styled.div`
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    justify-content: center; */
+    
 `;
 
 export const FooterText = styled.p`

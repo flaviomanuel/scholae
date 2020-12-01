@@ -75,6 +75,34 @@ function Table() {
                  date="25/10/2020"
                 />
 
+<TableLine  
+                 href="/" 
+                 title="Aviso de reunião de pais e mestres" 
+                 name="Reitoria do IFTO" 
+                 date="25/10/2020"
+                />
+
+<TableLine  
+                 href="/" 
+                 title="Aviso de reunião de pais e mestres" 
+                 name="Reitoria do IFTO" 
+                 date="25/10/2020"
+                />
+
+<TableLine  
+                 href="/" 
+                 title="Aviso de reunião de pais e mestres" 
+                 name="Reitoria do IFTO" 
+                 date="25/10/2020"
+                />
+
+<TableLine  
+                 href="/" 
+                 title="Aviso de reunião de pais e mestres" 
+                 name="Reitoria do IFTO" 
+                 date="25/10/2020"
+                />
+
 
 
 

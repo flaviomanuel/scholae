@@ -9,8 +9,8 @@ export const HeaderCenterContainer = styled(HeaderContainer)`
 `;
 
 export const Main = styled.main`
-    display: flex;
-    justify-content: center;
+    height: calc(100vh - 27.5rem);
+    
 `;
 
 export const ButtonsGroup = styled.div`
@@ -18,7 +18,7 @@ export const ButtonsGroup = styled.div`
     flex-direction: column; 
     align-items: center;
     justify-content: center;   
-    margin-top: 15vh;
+   
     border: solid 3px var(--color-gray-header);
 
     @media(min-width: 900px){
