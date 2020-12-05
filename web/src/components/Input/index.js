@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { FormFieldWrapper, Input, Label } from './styles';
+import { FormFieldWrapper, InputField, Label } from './styles';
 
-function Text({label, type, name, suggestions}) {
+function Input({label, type, name, suggestions}) {
 
    
     const isTypeTextarea = type === 'textarea';
@@ -13,7 +13,7 @@ function Text({label, type, name, suggestions}) {
     return (
         <FormFieldWrapper>
             <Label htmlFor={fieldId}>{label}</Label>
-            <Input
+            <InputField
              as={tag}
              type={type}
              name={name}
@@ -23,6 +23,4 @@ function Text({label, type, name, suggestions}) {
     )
 }
 
-export default {
-    Text,
-};
+export default Input;

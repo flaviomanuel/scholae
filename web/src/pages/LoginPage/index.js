@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Container, BoxContainer} from '../../assets/styles/global'
 import Header from '../../components/Header';
-import Forms from '../../components/Forms'
+import Input from '../../components/Input'
 import Button from '../../components/Button'
 import Footer from '../../components/Footer'
 import { Form, Title } from './styles'
@@ -18,14 +18,14 @@ function LoginPage(){
            <Form isLoginPage >
         
                 <Title size={3}>Entrar</Title>
-                <Forms.Text 
+                <Input 
                 label="Digite seu email" 
                 type="Email" 
                 name="email"
                 suggestions=""
                 />
 
-                <Forms.Text 
+                <Input 
                 label="Digite sua senha" 
                 type="password" 
                 name="password"

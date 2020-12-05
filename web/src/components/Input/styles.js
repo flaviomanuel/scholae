@@ -24,7 +24,7 @@ export const FormFieldWrapper = styled.div`
 
 
 
-export const Input = styled.input`
+export const InputField = styled.input`
   background: white;
   color: #333333;
   display: block;
