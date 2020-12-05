@@ -34,7 +34,7 @@ function LoginPage(){
 
                 
 
-                <Button to="/">Acessar</Button>
+                <Button to="/register-message">Acessar</Button>
                 <Title size={1.8}>OU</Title>
                 <Button to="/">Acessar como visitante</Button>               
             </Form>

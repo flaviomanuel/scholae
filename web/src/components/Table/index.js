@@ -12,18 +12,17 @@ import { TableContainer,
 
 import TableLine from './components/TableLine';
 import { TR } from '../Table/components/TableLine/styles';
+import Banner from '../Banner';
+
+import { FaClipboardList} from 'react-icons/fa';
+
 
 function Table() {
     return(
         <TableContainer>
           
             
-            <Caption>
-                <CaptionContainer>
-                    <IconCaption/>
-                    <TextCaption>Listagem de avisos</TextCaption>
-                </CaptionContainer>
-            </Caption>
+        <Banner Icon={FaClipboardList}>Listagem de avisos</Banner> 
             
 
             <Thead>
