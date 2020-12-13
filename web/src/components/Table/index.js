@@ -4,10 +4,6 @@ import { TableContainer,
          Thead, 
          Tbody, 
          TH, 
-         Caption,
-         CaptionContainer,
-         TextCaption,
-         IconCaption, 
           } from "./styles";
 
 import TableLine from './components/TableLine';

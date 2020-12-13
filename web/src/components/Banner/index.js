@@ -1,6 +1,6 @@
 import React from 'react';
 import { Caption, CaptionContainer, IconCaption, TextCaption } from './styles';
-import { FaClipboardList} from 'react-icons/fa';
+
 
 
 function Banner({ children, Icon }) {
