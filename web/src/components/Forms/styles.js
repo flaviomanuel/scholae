@@ -13,7 +13,7 @@ export const FormsWrapper = styled.form`
 ${ props => props.isLoginPage ? css`
     width: 60%;
  ` : css`
-    width: 90%;
+    width: 100%;
  ` }
 
  }

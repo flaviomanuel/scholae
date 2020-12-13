@@ -1,9 +1,18 @@
-import styled from 'styled-components';
+import styled,{css} from 'styled-components';
 
 
-export const Label = styled.label`
+export const LabelInput = styled.label`
   color: black;
-  margin-bottom: 1rem;
+  font-weight: bold;
+  
+  font-size: 1.6rem;
+`;
+
+export const LabelCheckBox = styled.label`
+  color: black;
+  
+  font-size: 1.6rem;
+  margin-left: 1rem;
 
 `;
 
@@ -20,6 +29,8 @@ export const FormFieldWrapper = styled.div`
     flex-direction: column; */
 
   margin-bottom: 3rem;
+
+ 
 `;
 
 
@@ -46,5 +57,26 @@ export const InputField = styled.input`
   }
 
   /* margin: 0 auto; */
+  ${ ({isCheckBox}) => (isCheckBox ? css`
 
+  display: inline;
+  width: 2rem;
+  height: 2rem;
+  ` : '') }
+`;
+
+export const CheckBox = styled.div`
+
+display: flex;
+align-items: center;
+margin: 1.4rem;
+
+`;
+
+export const CheckBoxContainer = styled.div`
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-template-rows: repeat(2, 1fr);
+
+justify-items: center;
 `;

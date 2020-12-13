@@ -8,6 +8,7 @@ export const Caption = styled.caption`
  
     padding: 1rem 0px;
     margin-bottom: 4rem;
+    width: 100%;
 
 `;
 
