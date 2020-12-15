@@ -9,7 +9,8 @@ export const HeaderCenterContainer = styled(HeaderContainer)`
 `;
 
 export const Main = styled.main`
-    height: calc(100vh - 27.5rem);
+    
+    flex: 1 0 auto;
     
 `;
 

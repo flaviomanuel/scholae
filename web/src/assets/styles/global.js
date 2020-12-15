@@ -15,9 +15,6 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
-html, body, #root {
-    height: 100vh;
-}
 
 #root {
     display: flex;
@@ -50,6 +47,10 @@ ul, li {
 
 
 export const Container = styled.div`
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+
    width: 100vw;
     height: 100vh;
     
@@ -57,9 +58,10 @@ export const Container = styled.div`
 `;
 
 export const BoxContainer = styled.div`
+    flex: 1;
     width: 80vw;
     
-    margin: 3rem auto 3rem auto;
+    margin: 6rem auto 6rem auto;
 
     display: flex;
     justify-content: center;

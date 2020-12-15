@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 
 export const FooterContainer = styled.footer`
+    flex-shrink: 0;
     background: var(--color-gray-header);
     width: 100vw;
 
-    position: absolute;
-    left: 0;
-
-    
+  
     
 `;
 
