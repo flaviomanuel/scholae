@@ -13,7 +13,11 @@ export const LabelCheckBox = styled.label`
   
   font-size: 1.6rem;
   margin-left: 1rem;
+  max-width: 8rem;
 
+  @media(max-width: 295px) {
+margin: 0 0 1rem 0;
+}
 `;
 
 export const FormFieldWrapper = styled.div`
@@ -71,6 +75,11 @@ display: flex;
 align-items: center;
 margin: 1.4rem;
 
+
+@media(max-width: 365px) {
+  margin: 0 0 1rem 0;
+
+}
 `;
 
 export const CheckBoxContainer = styled.div`
@@ -79,4 +88,13 @@ grid-template-columns: repeat(3, 1fr);
 grid-template-rows: repeat(2, 1fr);
 
 justify-items: center;
+
+@media(max-width: 510px) {
+display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+grid-template-rows: repeat(3, 1fr);
+ margin: 0;
+}
+
 `;
