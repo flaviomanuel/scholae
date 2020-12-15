@@ -59,7 +59,7 @@ export const Container = styled.div`
 export const BoxContainer = styled.div`
     width: 80vw;
     
-    margin: 6rem auto 6rem auto;
+    margin: 3rem auto 3rem auto;
 
     display: flex;
     justify-content: center;

@@ -6,6 +6,8 @@ import { Container,BoxContainer } from '../../assets/styles/global';
 import Forms from '../../components/Forms';
 import Input from '../../components/Input';
 import Banner from '../../components/Banner';
+import Footer from '../../components/Footer';
+import Button from '../../components/Button';
 
 import { FaFileUpload } from 'react-icons/fa';
 
@@ -23,20 +25,6 @@ function RegisterPage() {
                     type="text"
                     suggestions=''
                     />
-
-                    {/* <Input
-                    label="Turmas"
-                    name="clasrooms"
-                    suggestions={[
-                        '1A',
-                        '1B',
-                        '2A',
-                        '2B',
-                        '3A',
-                        '3B',
-                        
-                    ]}
-                    /> */}
                     
                     <Input
                     label="Turmas"
@@ -60,9 +48,13 @@ function RegisterPage() {
                     type="textarea"
                     suggestions=""
                     />
+
+                    <Button to="/">Submeter</Button>
                 </Forms>
                 
             </BoxContainer>
+
+            <Footer/>
         </Container>
     )
 }
