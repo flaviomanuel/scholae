@@ -10,7 +10,12 @@ function Footer() {
           <FooterGroup>
 
             <FooterText>
-            Copyright © 2020 - Tocatins <hr/>Design and development by Scholae’s Team</FooterText>
+              Copyright © 2020 - Tocatins
+            </FooterText>
+            
+            <FooterText>
+              Design and development by Scholae’s Team
+            </FooterText>
           </FooterGroup>
 
       </FooterContainer>
