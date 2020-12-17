@@ -16,22 +16,15 @@ function DropdownMenu() {
     const [active, setActive] = useState(false);
     const [activeTwo, setActiveTwo] = useState(false);
 
-
     function handleActive(){
-       
             setActive(oldActive => (oldActive ? false : true ));
-
             if(activeTwo) {
                 setActiveTwo(oldActive => (oldActive ? false : true)); 
             }
-            console.log('first', active);
-
     }
 
     function handleActiveTwo() {
-        setActiveTwo(oldActive => (oldActive ? false : true)); 
-        console.log('second', activeTwo);
-        
+        setActiveTwo(oldActive => (oldActive ? false : true));
     }
 
     return (

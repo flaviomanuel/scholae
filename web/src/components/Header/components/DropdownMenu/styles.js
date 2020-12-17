@@ -12,7 +12,7 @@ export const DropdownContainer = styled.ul`
 
 export const MenuContainer = styled.li`
     background-color: var(--color-yellow-main);
-    border-radius: 8px;
+    border-radius: 0.8rem;
 `;
 
 export const FirstItem = styled.a`
@@ -27,7 +27,7 @@ export const FirstItem = styled.a`
     align-items: center;
 
     @media(max-width: 500px) {
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
  
 }
 

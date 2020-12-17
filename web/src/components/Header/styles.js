@@ -15,15 +15,20 @@ export const HeaderContent = styled.div`
     display: flex;
     justify-content: space-between;
     /* align-items: center; */
+    @media(max-width: 450px){
+    width: 90vw;
+
+    }
     `;
 
 export const HeaderLogo = styled.img`
    height: 4rem;
    margin: 2rem;
-    padding: 0.3rem;
-    
+   padding: 0.3rem;
+   max-width: 17rem;
 @media(max-width: 350px) {
     height: 3rem;
-    margin-top: 2rem;
+    margin: 2rem 2rem 2rem 0;
+
 }
 `;
