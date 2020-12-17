@@ -19,8 +19,9 @@ export const HeaderContent = styled.div`
 
 export const HeaderLogo = styled.img`
    height: 4rem;
-    margin: 1.5rem;
-
+   margin: 2rem;
+    padding: 0.3rem;
+    
 @media(max-width: 350px) {
     height: 3rem;
     margin-top: 2rem;
