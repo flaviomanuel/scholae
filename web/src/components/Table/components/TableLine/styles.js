@@ -10,7 +10,9 @@ export const TD = styled.td`
     font-size: 1.4rem;
     text-align: center;
     max-width: 150px;
-
+    @media(max-width: 400px){
+        font-size: 1.2rem;
+    }
 `;
 
 
