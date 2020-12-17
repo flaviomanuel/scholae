@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 
 
-export const Caption = styled.caption`
+export const Caption = styled.div`
     background-color: var(--color-yellow-main);
     text-align: left;
  

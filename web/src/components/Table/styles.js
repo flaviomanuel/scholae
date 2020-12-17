@@ -13,6 +13,7 @@ export const TableContainer = styled.table`
 
 
 `;
+export const Caption = styled.caption``;
 
 
 

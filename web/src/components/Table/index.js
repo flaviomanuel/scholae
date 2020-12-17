@@ -3,7 +3,8 @@ import React from 'react';
 import { TableContainer, 
          Thead, 
          Tbody, 
-         TH, 
+         TH,
+         Caption 
           } from "./styles";
 
 import TableLine from './components/TableLine';
@@ -17,8 +18,9 @@ function Table() {
     return(
         <TableContainer>
           
-            
-        <Banner Icon={FaClipboardList}>Listagem de avisos</Banner> 
+         <Caption>
+            <Banner Icon={FaClipboardList}>Listagem de avisos</Banner> 
+         </Caption>
             
 
             <Thead>
