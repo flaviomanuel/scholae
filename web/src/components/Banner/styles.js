@@ -6,7 +6,7 @@ export const Caption = styled.caption`
     background-color: var(--color-yellow-main);
     text-align: left;
  
-    padding: 1rem 0px;
+    /* padding: 1rem 0px; */
     margin-bottom: 4rem;
     width: 100%;
 
@@ -16,6 +16,8 @@ export const CaptionContainer = styled.div`
     display:flex;
     align-items: center;
     justify-content: end;
+    height: 6rem;
+
 `;
 
 export const TextCaption = styled.span`
@@ -36,8 +38,10 @@ export const TextCaption = styled.span`
     export const IconCaption = styled.div`
       margin: 0 1rem 0 2.5rem;
       @media(max-width: 450px) {
-          width: 3rem;
-          height: 3rem;
+          width: 2.8rem;
+          height: 2.8rem;
+             display:flex;
+    align-items: center;
   }
 
   `;
