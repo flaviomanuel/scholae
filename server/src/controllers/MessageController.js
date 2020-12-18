@@ -8,8 +8,10 @@ module.exports = {
 
             const { id } = req.params;
 
+            const trx = await knex.transaction();
 
-            const classMsgs =  knex('classrooms')
+
+            const classMsgs =  trx('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .join('messages', 'messages_classrooms.message_id', '=', 'messages.id')
                 .join('users', 'messages.user_id', '=', 'users.id')
@@ -19,7 +21,7 @@ module.exports = {
                 .limit(10)
                 .offset((page - 1) * 10);
 
-            const [count] = await knex('messages').count();
+            const [count] = await trx('messages').count();
 
 
             res.header('X-Total-Count', count.count)
@@ -43,6 +45,8 @@ module.exports = {
                 }
             })
             
+            await trx.commit();
+
             return res.json(
                 serializedClassMsgs
             );
@@ -57,7 +61,10 @@ module.exports = {
                 id
             } = req.params;
 
-            const message = await knex('messages')
+            const trx = await knex.transaction();
+
+
+            const message = await trx('messages')
             .join('users', 'messages.user_id', '=', 'users.id')
             .first()
             .where('messages.id', id);
@@ -68,10 +75,12 @@ module.exports = {
                 });
             }
             //consulta das classrooms de message specific 
-            const classroom = await knex('classrooms')
+            const classroom = await trx('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .where('messages_classrooms.message_id', id)
                 .select('classrooms.name');
+
+            await trx.commit();
 
             return res.json({
                 message,
@@ -92,7 +101,10 @@ module.exports = {
                 classrooms,
             } = req.body;
 
-            const ids = await knex('messages').insert({
+
+            const trx = await knex.transaction();
+            
+            const ids = await trx('messages').insert({
                 title,
                 description,
                 user_id
@@ -107,8 +119,10 @@ module.exports = {
                 };
             })
             console.log(messsageClassroom);
-            await knex('messages_classrooms')
+            await trx('messages_classrooms')
                 .insert(messsageClassroom);
+
+            await trx.commit();
 
             return res.status(201).send();
 
