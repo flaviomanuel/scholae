@@ -36,17 +36,17 @@ function DropdownMenu() {
             </MenuContainer>
 
             <SubmenuContainer active={active}>
-                <Submenu name="Home" href="/"/>
+                <Submenu name="Home" to="/"/>
                 <Submenu  name="Salas" icon={<ArrowLeft onClick={handleActiveTwo}/>} />                
-                <Submenu name="Acessar" href="/"/>
+                <Submenu name="Acessar" to="/login"/>
             </SubmenuContainer>
 
             <LeftMenuContainer activeTwo={activeTwo}>
-                <Submenu name="1 ano A" />
-                <Submenu name="1 ano A" />
-                <Submenu name="1 ano A" />
-                <Submenu name="1 ano A" />
-                <Submenu name="1 ano A" />
+                <Submenu name="1 ano A" to="list-message"/>
+                <Submenu name="1 ano A" to="list-message"/>
+                <Submenu name="1 ano A" to="list-message"/>
+                <Submenu name="1 ano A" to="list-message"/>
+                <Submenu name="1 ano A" to="list-message"/>
             </LeftMenuContainer>
         </DropdownContainer>
     )

@@ -4,10 +4,10 @@ import {SubmenuLink,
         SubmenuItem
         } from './styles'
 
-function Submenu({ name, href, icon, onClick}) {
+function Submenu({ name, to, icon, onClick}) {
     return (
         <SubmenuItem onClick={onClick}>
-            <SubmenuLink href={href}>
+            <SubmenuLink to={to}>
                 <span>
                 {icon}
                 </span> 
