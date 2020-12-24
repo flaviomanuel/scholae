@@ -67,7 +67,8 @@ module.exports = {
             const message = await trx('messages')
             .join('users', 'messages.user_id', '=', 'users.id')
             .first()
-            .where('messages.id', id);
+            .where('messages.id', id)
+            .select('users.id','users.name', 'users.email', 'messages.*');  
 
             if (!message) {
                 return res.status(400).json({
