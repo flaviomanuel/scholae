@@ -1,3 +1,4 @@
+const { first } = require("../database");
 const knex = require("../database");
 
 module.exports = {
@@ -35,13 +36,12 @@ module.exports = {
                     id: classMsg.id,
                     title: classMsg.title,
                     description: classMsg.description,
-                    created_at: classMsg.created_at,
+                    created_at:  classMsg.created_at.toLocaleString('pt-BR').split(' ')[0],
                     user_id: classMsg.user_id,
                     classroom_id: classMsg.classroom_id,
                     classroomName: classMsg.name.replace(' ', 'º '),
                     classroomNickname: classMsg.nickname.replace(' ', 'º '),
                     name: classMsg.name
-
                 }
             })
             
@@ -74,6 +74,16 @@ module.exports = {
                     Message: 'Messagem não encontrada'
                 });
             }
+
+            const serializedMessage = {
+                id: message.id,
+                title: message.title,
+                description: message.description,
+                created_at: message.created_at.toLocaleString('pt-BR').split(' ')[0],
+                user_id: message.user_id,
+                name: message.name,
+            }
+
             //consulta das classrooms de message specific 
             const classroom = await trx('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
@@ -83,7 +93,7 @@ module.exports = {
             await trx.commit();
 
             return res.json({
-                message,
+                message: serializedMessage,
                 classroom
             });
 

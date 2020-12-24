@@ -7,7 +7,7 @@ module.exports = {
     connection: {
       database: 'db_scholae',
       user: 'postgres',
-      password: 'rootpostgres'
+      password: 'root'
   },
   migrations: {
     directory: `${__dirname}/src/database/migrations`
