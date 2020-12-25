@@ -17,7 +17,7 @@ module.exports = {
                 .join('messages', 'messages_classrooms.message_id', '=', 'messages.id')
                 .join('users', 'messages.user_id', '=', 'users.id')
                 .select('messages.*','messages_classrooms.classroom_id',
-                 'classrooms.name', 'classrooms.nickname' , 'users.name')
+                 'classrooms.nickname', 'users.name')
                  .where('classrooms.id', id)
                 .limit(10)
                 .offset((page - 1) * 10);
@@ -28,10 +28,8 @@ module.exports = {
             res.header('X-Total-Count', count.count)
 
             const results = await classMsgs;    
-
             //mudando o nome dos campes "name" e "nickname" do classroom para "classroomName" e "classroomNickname"
             const serializedClassMsgs = results.map(classMsg => {
-                console.log(classMsg);
                 return {
                     id: classMsg.id,
                     title: classMsg.title,
@@ -39,8 +37,7 @@ module.exports = {
                     created_at:  classMsg.created_at.toLocaleString('pt-BR').split(' ')[0],
                     user_id: classMsg.user_id,
                     classroom_id: classMsg.classroom_id,
-                    classroomName: classMsg.name.replace(' ', 'º '),
-                    classroomNickname: classMsg.nickname.replace(' ', 'º '),
+                    nickname: classMsg.nickname.replace(' ', 'º '),
                     name: classMsg.name
                 }
             })
@@ -89,7 +86,7 @@ module.exports = {
             const classroom = await trx('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .where('messages_classrooms.message_id', id)
-                .select('classrooms.name');
+                .select('classrooms.nickname');
 
             await trx.commit();
 
@@ -119,9 +116,8 @@ module.exports = {
                 title,
                 description,
                 user_id
-            }).returning('id').then(console.log('Cadastrado!'));
+            }).returning('id')
 
-            console.log(ids[0]);
 
             const messsageClassroom = classrooms.map(classroom_id => {
                 return {
@@ -129,7 +125,6 @@ module.exports = {
                     message_id: ids[0],
                 };
             })
-            console.log(messsageClassroom);
             await trx('messages_classrooms')
                 .insert(messsageClassroom);
 

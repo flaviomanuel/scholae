@@ -9,8 +9,7 @@ module.exports = {
             const serializedClassroom = results.map(classroom => {
                 return { 
                     id: classroom.id,
-                    name: classroom.name.replace(' ', 'º '),
-                    nickname: classroom.nickname.replace(' ', 'º ')
+                    name: classroom.nickname.replace(' ', 'º '),
                 }
             })
            
