@@ -24,7 +24,7 @@ function HomePage(){
           <BoxContainer>
             <Main>
             <ButtonsGroup>
-            <LinkA to="/list-message">Acessar salas</LinkA>
+            <LinkA to="/list-message/1">Acessar salas</LinkA>
               <LinkA to="/login">Registar aviso</LinkA>
             </ButtonsGroup>
             </Main>

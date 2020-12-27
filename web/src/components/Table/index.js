@@ -52,7 +52,7 @@ function Table({id}) {
                     return (
                         <TableLine 
                         key={message.id} 
-                        href="/" 
+                        href={`/${message.id}`} 
                         title={message.title} 
                         name={message.name} 
                         date={message.created_at}
