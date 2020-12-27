@@ -67,6 +67,7 @@ export const BoxContainer = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    justify-content: start;
 `;
 
 
