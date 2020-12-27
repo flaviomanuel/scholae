@@ -35,6 +35,7 @@ function DropdownMenu() {
 
     function handleActiveTwo() {
         setActiveTwo(oldActive => (oldActive ? false : true));
+
     }
 
     return (
@@ -53,7 +54,12 @@ function DropdownMenu() {
 
             <LeftMenuContainer activeTwo={activeTwo}>
                 {classrooms.map(classroom => 
-                    <Submenu key={classroom.id} name={classroom.name} to={`list-message/${classroom.id}` === `/list-message/${classroom.id}` ? `/${classroom.id}` : `/list-message/${classroom.id}` }/>
+                    <Submenu 
+                    key={classroom.id} 
+                    name={classroom.name} 
+                    to={`list-message/${classroom.id}` === `/list-message/${classroom.id}` ? `/${classroom.id}` : `/list-message/${classroom.id}`}
+                    onClick={handleActiveTwo, handleActive}    
+                />
                    )}
 
             </LeftMenuContainer>
