@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router';
 
 import { Container, BoxContainer } from '../../assets/styles/global';
 import Header from '../../components/Header';
@@ -7,12 +8,14 @@ import Footer from '../../components/Footer';
 
 function ListPage(){
 
+
+    const { id } = useParams()
     return (
         <Container>       
             <Header/>
             
             <BoxContainer>
-                <Table/>
+                <Table id={id}/>
             </BoxContainer>
            <Footer/>
 

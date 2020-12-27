@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, {useState, useEffect} from 'react';
+import { useParams, useLocation } from 'react-router-dom'
 import { TableContainer, 
          Thead, 
          Tbody, 
@@ -12,9 +12,25 @@ import { TR } from '../Table/components/TableLine/styles';
 import Banner from '../Banner';
 
 import { FaClipboardList} from 'react-icons/fa';
+import api from '../../services/api';
 
 
-function Table() {
+function Table({id}) {
+
+    const location = useLocation();
+    console.log('location: ',location);
+
+    const [messages, setMessages] = useState([])
+    
+    console.log('fon',id)
+    console.log('messages',messages)
+
+    useEffect(() => {
+        api.get(`messagesclassrooms/${id}`).then(response => {
+            setMessages(response.data)
+        })
+    },[id])
+
     return(
         <TableContainer>
           
@@ -32,76 +48,17 @@ function Table() {
             </Thead>
             
             <Tbody>
-                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTo" 
-                 date="25/10/2020"
-                />
-                                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-                <TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-<TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-<TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-<TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-<TableLine  
-                 href="/" 
-                 title="Aviso de reunião de pais e mestres" 
-                 name="Reitoria do IFTO" 
-                 date="25/10/2020"
-                />
-
-
-
+                {messages.map((message) => {
+                    return (
+                        <TableLine 
+                        key={message.id} 
+                        href="/" 
+                        title={message.title} 
+                        name={message.name} 
+                        date={message.created_at}
+                       />
+                    )
+                })}
 
 
             </Tbody>

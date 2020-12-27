@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BiChevronDown } from 'react-icons/bi'
 
 import { 
@@ -10,9 +10,19 @@ import {
     LeftMenuContainer} from './styles';
     
 import Submenu from '../Submenu/index'
+import api from '../../../../services/api';
 
 
 function DropdownMenu() {
+
+    const [classrooms, setClassrooms] = useState([])
+
+    useEffect(() => {
+        api.get('classrooms').then(response => {
+            setClassrooms(response.data)
+        })
+    },[])
+
     const [active, setActive] = useState(false);
     const [activeTwo, setActiveTwo] = useState(false);
 
@@ -42,11 +52,10 @@ function DropdownMenu() {
             </SubmenuContainer>
 
             <LeftMenuContainer activeTwo={activeTwo}>
-                <Submenu name="1 ano A" to="list-message"/>
-                <Submenu name="1 ano A" to="list-message"/>
-                <Submenu name="1 ano A" to="list-message"/>
-                <Submenu name="1 ano A" to="list-message"/>
-                <Submenu name="1 ano A" to="list-message"/>
+                {classrooms.map(classroom => 
+                    <Submenu key={classroom.id} name={classroom.name} to={`list-message/${classroom.id}` === `/list-message/${classroom.id}` ? `/${classroom.id}` : `/list-message/${classroom.id}` }/>
+                   )}
+
             </LeftMenuContainer>
         </DropdownContainer>
     )

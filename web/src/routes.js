@@ -12,7 +12,7 @@ function Routes(){
         <BrowserRouter>
             <Route path="/" exact component={HomePage}/>
             <Route path="/login" component={LoginPage}/>
-            <Route path="/list-message" component={ListPage}/>
+            <Route path="/list-message/:id" component={ListPage}/>
             <Route path="/register-message" component={RegisterPage}/>
             <Route path="/messages" component={MessagePage}/>
         </BrowserRouter>
