@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import { Container, BoxContainer} from '../../assets/styles/global';
 import Header from '../../components/Header';
@@ -7,40 +8,58 @@ import Footer from '../../components/Footer';
 
 import { MessageContainer, MessageBody, MessageHeader, MessageName, MessageText} from './styles';
 import { FaEnvelope } from 'react-icons/fa'
+import api from '../../services/api';
 
 function MessagePage(){
+
+    const [message, setMessage] = useState([]);
+    const [classrooms, setClassrooms] = useState([]);
+    
+    const { id } = useParams(); 
+
+    console.log(message)
+    console.log('é array?:',Array.isArray(classrooms))
+    useEffect(() => {
+        api.get(`/message/${id}`).then( response => {
+            setMessage(response.data.oneMessage)
+            setClassrooms(response.data.classrooms)
+        })
+    }, [])
+
+    
+
     return(
         <Container>
             <Header/> 
 
             <BoxContainer>
                 <Banner Icon={FaEnvelope}>Aviso de reunião de pais e mestres </Banner>
-
+        
                 <MessageContainer>
                     <MessageHeader>
                         <MessageName>
-                            Professor Saitama
+                            {message.name} 
                         </MessageName>
                         <MessageText size="1.6rem" color="#5F6368">
-                            Para 1º ano A, 2º ano A
-                        </MessageText>
+                        Para:
+
+                        {classrooms.map((classroom) => {
+                            return (
+                            <>
+                            {' '+classroom.nickname+','+' '}
+                            </>
+                            )
+                        })}
+                            </MessageText>
+                    
                         <MessageText size="1.6rem" color="#5F6368">
-                            Data: 07/08/2020
+                            Data: {message.created_at}
                         </MessageText>
                     </MessageHeader>
 
                     <MessageBody>
                         <MessageText size="1.8rem" color="#222222">
-                        Prezado pais e alunos do Instituto Federal do Tocatins - Campus Araguaína.
-                        Após o primeiro bimestre ocorrerá a primeira reunião com os país e mestres que trazerá como tema principal os seguintes temas:<br></br>
-                            - Atraso por partes dos alunos;<br></br>
-                            - Baixo redimento nas matérias;<br></br>
-                            - Data de entrega dos livros escolares;<br></br>
-                        Espero que todos compareçam a essa reunião para que fiquem mais a par das situação de seus filhos.<br></br><br></br>
-
-                        Att,<br></br><br></br>
-
-                        Saitama - Diretor do IFTO<br></br>
+                        {message.description}
                          </MessageText>
                     </MessageBody>
                 </MessageContainer>

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useParams, useLocation } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 import { TableContainer, 
          Thead, 
          Tbody, 
@@ -52,7 +52,7 @@ function Table({id}) {
                     return (
                         <TableLine 
                         key={message.id} 
-                        href={`/${message.id}`} 
+                        href={`/message/${message.id}`} 
                         title={message.title} 
                         name={message.name} 
                         date={message.created_at}

@@ -14,7 +14,7 @@ function Routes(){
             <Route path="/login" component={LoginPage}/>
             <Route path="/list-message/:id" component={ListPage}/>
             <Route path="/register-message" component={RegisterPage}/>
-            <Route path="/messages" component={MessagePage}/>
+            <Route path="/message/:id" component={MessagePage}/>
         </BrowserRouter>
     )
 }

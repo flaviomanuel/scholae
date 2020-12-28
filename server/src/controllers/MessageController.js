@@ -1,4 +1,3 @@
-const { first } = require("../database");
 const knex = require("../database");
 
 module.exports = {
@@ -83,17 +82,23 @@ module.exports = {
             }
 
             //consulta das classrooms de message specific 
-            const classroom = await trx('classrooms')
+            const classrooms = await trx('classrooms')
                 .join('messages_classrooms', 'classrooms.id', '=', 'messages_classrooms.classroom_id')
                 .where('messages_classrooms.message_id', id)
-                .select('classrooms.nickname');
+                .select('classrooms.*');
 
+            const serializedClassrooms = classrooms.map((classroom) => { 
+                return {
+                    id: classroom.id,
+                    nickname: classroom.nickname.replace(' ', 'º '),
+                }
+            })
             await trx.commit();
 
             return res.json({
-                message: serializedMessage,
-                classroom
-            });
+                oneMessage: serializedMessage,  
+                classrooms: serializedClassrooms
+            } );
 
         } catch (error) {
             next(error);
