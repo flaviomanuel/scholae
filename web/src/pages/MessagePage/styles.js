@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const MessageContainer = styled.div`
     background-color: #f1f1f1;
-    padding: 5rem;
+    padding: 2rem 4rem 2rem 4rem;
     width: 100%;
     border: solid #CCCCCC 2px;
 
