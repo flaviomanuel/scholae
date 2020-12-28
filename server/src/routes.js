@@ -18,7 +18,7 @@ routes
     .post('/users/authenticate', UserController.authenticate)
     //messages
     .get('/messagesclassrooms/:id', MessageController.index)
-    .get('/messages/:id', MessageController.show)
+    .get('/message/:id', MessageController.show)
     .post('/messages',authMiddleware, MessageController.create)
     .put('/messages/:id',authMiddleware, MessageController.update)
     .delete('/messages/:id',authMiddleware, MessageController.delete)
