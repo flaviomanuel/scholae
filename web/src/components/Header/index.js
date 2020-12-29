@@ -5,13 +5,13 @@ import DropdownMenu from './components/DropdownMenu';
 
 import logoImg from '../../assets/images/scholaeYellow.png';
 
-function Header({classrooms}) {
+function Header() {
     return (
         <HeaderContainer>
             <HeaderContent>
                 <HeaderLogo src={logoImg}/>
 
-                <DropdownMenu classrooms={classrooms}/>
+                <DropdownMenu/>
             </HeaderContent>
         </HeaderContainer>
     )

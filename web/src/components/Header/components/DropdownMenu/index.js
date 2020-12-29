@@ -48,7 +48,7 @@ function DropdownMenu() {
 
             <SubmenuContainer active={active}>
                 <Submenu name="Home" to="/"/>
-                <Submenu  name="Salas" icon={<ArrowLeft onClick={handleActiveTwo}/>} />                
+                <Submenu  name="Salas" to="#" icon={<ArrowLeft onClick={handleActiveTwo}/>} />                
                 <Submenu name="Acessar" to="/login"/>
             </SubmenuContainer>
 
@@ -57,8 +57,10 @@ function DropdownMenu() {
                     <Submenu 
                     key={classroom.id} 
                     name={classroom.name} 
-                    to={`list-message/${classroom.id}` === `/list-message/${classroom.id}` ? `/${classroom.id}` : `/list-message/${classroom.id}`}
-                    onClick={handleActiveTwo, handleActive}    
+                    to= {`list-message/${classroom.id}` === `/list-message/${classroom.id}` 
+                    ? `/${classroom.id}` 
+                    : `/list-message/${classroom.id}`}
+                    onClick={handleActive}    
                 />
                    )}
 

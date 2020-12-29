@@ -17,14 +17,12 @@ function MessagePage(){
     
     const { id } = useParams(); 
 
-    console.log(message)
-    console.log('é array?:',Array.isArray(classrooms))
     useEffect(() => {
         api.get(`/message/${id}`).then( response => {
             setMessage(response.data.oneMessage)
             setClassrooms(response.data.classrooms)
         })
-    }, [])
+    }, [id])
 
     
 
@@ -45,9 +43,9 @@ function MessagePage(){
 
                         {classrooms.map((classroom) => {
                             return (
-                            <>
-                            {' '+classroom.nickname+','+' '}
-                            </>
+                            <React.Fragment key={classroom.id}>
+                            {` ${classroom.nickname}, `}
+                            </React.Fragment>
                             )
                         })}
                             </MessageText>

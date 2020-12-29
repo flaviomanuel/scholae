@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { useLocation } from 'react-router-dom'
+
 import { TableContainer, 
          Thead, 
          Tbody, 
@@ -17,14 +17,8 @@ import api from '../../services/api';
 
 function Table({id}) {
 
-    const location = useLocation();
-    console.log('location: ',location);
-
     const [messages, setMessages] = useState([])
     
-    console.log('fon',id)
-    console.log('messages',messages)
-
     useEffect(() => {
         api.get(`messagesclassrooms/${id}`).then(response => {
             setMessages(response.data)
