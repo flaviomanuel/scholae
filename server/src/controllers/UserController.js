@@ -52,7 +52,7 @@ module.exports = {
         .first();
         
         if(!user){
-            return res.status(400).send({ error: 'Email Invalido' })
+            return res.status(401).send({ error: 'Email Invalido' })
         }
         else {
             bcrypt.compare(password, user.password).then( isAuthenticated => {
