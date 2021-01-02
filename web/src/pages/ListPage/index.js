@@ -5,17 +5,14 @@ import { Container, BoxContainer } from '../../assets/styles/global';
 import Header from '../../components/Header';
 import Table from '../../components/Table';
 import Footer from '../../components/Footer';
-import NotFoundPage from '../NotFoundPage';
 
 function ListPage(){
 
 
     const { id } = useParams()
 
-    const isNotFound = parseInt(id) > 6;
-    console.log('true ou falso:', isNotFound);
- 
-    
+    const isNotFound = parseInt(id) > 6; 
+
     if(!isNotFound){
     return (
         <Container>       
@@ -32,7 +29,6 @@ function ListPage(){
     )
     } else {
         return (
-
             <Redirect to='/notFound'/>
         )
         } 

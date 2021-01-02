@@ -1,8 +1,5 @@
 import styled from 'styled-components';
-import Button from '../../components/Button';
-
  
-
 export const Title = styled.h1`
    color: #444444;
    font-size: ${props => props.size}rem;

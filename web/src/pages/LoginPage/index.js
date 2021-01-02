@@ -2,15 +2,15 @@ import React,{ useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import { Container, BoxContainer} from '../../assets/styles/global';
+import { Title, ButtonSubmit } from './styles';
+
 import Header from '../../components/Header';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Footer from '../../components/Footer';
 import Forms from '../../components/Forms';
-import { Title, ButtonSubmit } from './styles';
+
 import api from '../../services/api';
-
-
 
  function LoginPage(){
 
