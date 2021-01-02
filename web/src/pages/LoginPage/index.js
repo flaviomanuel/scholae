@@ -16,8 +16,6 @@ import api from '../../services/api';
 
     const history = useHistory()
 
-    const [errorMessage, setErrorMessage] = useState({});
-
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
   
@@ -33,8 +31,8 @@ import api from '../../services/api';
            
            console.log('informações: ',authenticate);
 
-            sessionStorage.setItem('user_id', authenticate.data.user.id);
-            sessionStorage.setItem('token', authenticate.data.token);
+            localStorage.setItem('user_id', authenticate.data.user.id);
+            localStorage.setItem('token', authenticate.data.token);
 
            history.push('/register-message');
        } catch (error) {
