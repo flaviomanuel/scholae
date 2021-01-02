@@ -1,10 +1,10 @@
 import React from 'react';
 import { LinkA } from './styles';
 
-function Button({ children, to }) {
+function Button({ children, to, type }) {
     return(
         <>
-            <LinkA to={to}>{children}</LinkA>
+            <LinkA type={type} to={to}>{children}</LinkA>
         </>
     )
 }

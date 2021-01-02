@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FormFieldWrapper, InputField, LabelInput, LabelCheckBox, CheckBox, CheckBoxContainer } from './styles';
 
-function Input({label, type, name, suggestions}) {
+function Input({label, type, name, suggestions, onChange, value}) {
 
    
     const isTypeTextarea = type === 'textarea';
@@ -26,7 +26,8 @@ function Input({label, type, name, suggestions}) {
                         as={tag}
                         type={type}
                         name={name}
-                        
+                        onChange={onChange}
+                        value={value}
                         isCheckBox={isCheckBox}
                         
                     //  list={`suggestionsFor${name}`}
@@ -45,6 +46,8 @@ function Input({label, type, name, suggestions}) {
                 name={name}
                 id={name}
                 isCheckBox={isCheckBox}
+                onChange={onChange}
+                value={value}
                 autoComplete={hasSuggestions ? 'off' : 'on'}
                //  list={`suggestionsFor${name}`}
                 />

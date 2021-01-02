@@ -1,9 +1,9 @@
 import React from 'react';
 import { FormsWrapper } from './styles'
 
-function Forms({children, isLoginPage}) {
+function Forms({children, isLoginPage, onSubmit}) {
     return (
-        <FormsWrapper isLoginPage={isLoginPage}>
+        <FormsWrapper onSubmit={onSubmit} isLoginPage={isLoginPage}>
             {children}
         </FormsWrapper>
     )
