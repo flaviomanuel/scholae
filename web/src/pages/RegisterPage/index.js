@@ -40,7 +40,7 @@ function RegisterPage() {
 
         const data = {
             title,
-            selectedCheckbox,
+            classrooms: selectedCheckbox,
             description,
             user_id
         }
@@ -48,16 +48,17 @@ function RegisterPage() {
         const tokenInclude = `Bearer ${token}`;
         try {
 
-        //     const options = { 
-        //         headers: {
-        //         'Content-Type': 'application/json',
-        //         'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjA5NzkxMTQ1LCJleHAiOjE2MDk4Nzc1NDV9.8y7JDh74vRuPRFTV7MjVaS5-37a6GHBZMQVorTvsds8',
-        //      }
-        //    }
+            const options = { 
+                headers: {
+                'Content-Type': 'application/json',
+                'Authorization': tokenInclude,
+             }
+           }
 
-        //     const createMessage = await api.post('/messages', data, options);
+            const createMessage = await api.post('/messages', data, options);
 
-            console.log('infos: ', data);
+            console.log('infos: ', createMessage);
+            alert('Cadastro realizado com sucesso!')
         } catch (error) {
             // Error 😨
             if (error.response) {
@@ -109,6 +110,7 @@ function RegisterPage() {
                     suggestions=''
                     value={title}
                     onChange={(event) => setTitle(event.target.value)}
+                    required={true}
                     />
                     
                     <Input
@@ -117,7 +119,7 @@ function RegisterPage() {
                     type="checkbox"
                     suggestions={classrooms}
                     onClick={handleSelectedCheckbox}
-                    // onChange={event => setSelectedCheckbox(event.target.value)}
+                    required={selectedCheckbox.length == 0 ? true : false}
                     />
 
                     <Input
@@ -127,6 +129,7 @@ function RegisterPage() {
                     suggestions=""
                     value={description}
                     onChange={(event) => setDescription(event.target.value)}
+                    required={true}
                     />
 
                     <ButtonSubmit type="submit">Submeter</ButtonSubmit>

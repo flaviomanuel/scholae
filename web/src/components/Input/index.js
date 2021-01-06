@@ -2,7 +2,7 @@ import React from 'react';
 
 import { FormFieldWrapper, InputField, LabelInput, LabelCheckBox, CheckBox, CheckBoxContainer } from './styles';
 
-function Input({label, type, name, suggestions, onChange, value, onClick}) {
+function Input({label, type, name, suggestions, onChange, value, onClick, required}) {
 
    
     const isTypeTextarea = type === 'textarea';
@@ -32,6 +32,7 @@ function Input({label, type, name, suggestions, onChange, value, onClick}) {
                             value={parseInt(suggestion.id)}
                             isCheckBox={isCheckBox}
                             onClick={onClick}
+                            required={required}
                         />
                 
                         <LabelCheckBox htmlFor={name}>{suggestion.name}</LabelCheckBox>
@@ -50,7 +51,7 @@ function Input({label, type, name, suggestions, onChange, value, onClick}) {
                 onChange={onChange}
                 value={value}
                 autoComplete={hasSuggestions ? 'off' : 'on'}
-               //  list={`suggestionsFor${name}`}
+                required={required}
                 />
                
                 </>
