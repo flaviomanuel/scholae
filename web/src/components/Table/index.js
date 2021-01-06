@@ -18,6 +18,7 @@ import api from '../../services/api';
 function Table({id}) {
 
     const [messages, setMessages] = useState([])
+    const [classrooms, setClassrooms] = useState([])
     
     useEffect(() => {
         api.get(`messagesclassrooms/${id}`).then(response => {
@@ -25,11 +26,17 @@ function Table({id}) {
         })
     },[id])
 
+    useEffect(() => {
+        api.get(`/classrooms/${id}`).then(response => {
+            setClassrooms(response.data[0])
+        })
+    },[id])
+
     return(
         <TableContainer>
           
          <Caption>
-            <Banner Icon={FaClipboardList}>Listagem de avisos</Banner> 
+            <Banner Icon={FaClipboardList}> {classrooms.nickname} - Listagem de avisos</Banner> 
          </Caption>
             
 

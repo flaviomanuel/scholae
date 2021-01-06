@@ -25,5 +25,6 @@ routes
     
     //classrooms
     .get('/classrooms', ClassroomController.index)
+    .get('/classrooms/:id', ClassroomController.show)
 
 module.exports = routes;
