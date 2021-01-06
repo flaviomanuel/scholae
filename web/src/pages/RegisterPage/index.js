@@ -119,7 +119,7 @@ function RegisterPage() {
                     type="checkbox"
                     suggestions={classrooms}
                     onClick={handleSelectedCheckbox}
-                    required={selectedCheckbox.length == 0 ? true : false}
+                    required={selectedCheckbox.length === 0 ? true : false}
                     />
 
                     <Input

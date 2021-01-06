@@ -15,6 +15,8 @@ import api from '../../../../services/api';
 
 function DropdownMenu() {
 
+    const isLogged = localStorage.getItem('token')
+
     const [classrooms, setClassrooms] = useState([])
 
     useEffect(() => {
@@ -50,6 +52,17 @@ function DropdownMenu() {
                 <Submenu name="Home" to="/"/>
                 <Submenu  name="Salas" to="#" icon={<ArrowLeft onClick={handleActiveTwo}/>} />                
                 <Submenu name="Acessar" to="/login"/>
+                {isLogged ?  (
+                <Submenu 
+                name="Logout" 
+                to="/"
+                onClick={() => {
+                    localStorage.removeItem('token')
+                    localStorage.removeItem('user_id')
+              }}
+                />
+
+                ) : '' }
             </SubmenuContainer>
 
             <LeftMenuContainer activeTwo={activeTwo}>

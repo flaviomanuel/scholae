@@ -21,7 +21,7 @@ function Table({id}) {
     
     useEffect(() => {
         api.get(`messagesclassrooms/${id}`).then(response => {
-            setMessages(response.data)
+            setMessages(response.data.reverse())
         })
     },[id])
 
