@@ -4,7 +4,6 @@ module.exports = {
     async index(req, res, next) {
         try {
 
-            const { page=1 } = req.query;
 
             const { id } = req.params;
 
@@ -18,8 +17,7 @@ module.exports = {
                 .select('messages.*','messages_classrooms.classroom_id',
                  'classrooms.nickname', 'users.name')
                  .where('classrooms.id', id)
-                .limit(10)
-                .offset((page - 1) * 10);
+
 
             const [count] = await trx('messages').count();
 
