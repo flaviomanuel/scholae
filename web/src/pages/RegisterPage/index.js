@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom'
 
 import Header from '../../components/Header';
 
@@ -16,6 +17,8 @@ import api from '../../services/api';
 
 function RegisterPage() {
     
+    const history = useHistory()
+
     const[classrooms, setClassrooms] = useState([]);
     const[title, setTitle] = useState('');
     const[selectedCheckbox, setSelectedCheckbox] = useState([]);
@@ -54,11 +57,13 @@ function RegisterPage() {
                 'Authorization': tokenInclude,
              }
            }
+            
+           await api.post('/messages', data, options);
 
-            const createMessage = await api.post('/messages', data, options);
 
-            console.log('infos: ', createMessage);
-            alert('Cadastro realizado com sucesso!')
+            alert('Aviso cadastrado com sucesso!')
+            history.push('/')
+
         } catch (error) {
             // Error 😨
             if (error.response) {
