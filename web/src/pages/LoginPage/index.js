@@ -83,7 +83,7 @@ import api from '../../services/api';
 
 
                 
-                <ButtonSubmit type="submit">acessar</ButtonSubmit>
+                <ButtonSubmit type="submit">Acessar</ButtonSubmit>
                 <Title size={1.8}>OU</Title>
                 <Button  to="/">Acessar como visitante</Button>               
             </Forms>
