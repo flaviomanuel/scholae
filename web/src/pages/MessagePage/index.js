@@ -47,12 +47,7 @@ function MessagePage(){
 
         try {
 
-            const options = { 
-                headers: {
-                'Content-Type': 'application/json',
-                'Authorization': tokenInclude,
-             }
-            }
+        
              const response = await api.delete(`/messages/${id}`, {headers: {
                 'Content-Type': 'application/json',
                 'Authorization': tokenInclude,
@@ -80,7 +75,6 @@ function MessagePage(){
         
     }
 }
-    const text = "alou\n\nalou"
     return(
         <Container>
             <Header/> 
