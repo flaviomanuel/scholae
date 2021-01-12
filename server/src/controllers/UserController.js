@@ -2,7 +2,7 @@ const knex = require("../database");
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-const authConfig = require('../config/auth.json')
+const authConfig = require('../config/auth')
 
 module.exports = {
 
