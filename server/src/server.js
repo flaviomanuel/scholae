@@ -12,10 +12,6 @@ app.use(cors({
 
 app.use(routes);
 
-
-
-
-
 // notFound
 app.use((req, res, next) => {
     const error = new Error("Not Found")
@@ -31,4 +27,4 @@ app.use((error, req, res, next) => {
     })
 })
 
-app.listen(3333);
+app.listen(process.env.PORT || 3333);
