@@ -50,8 +50,13 @@ function DropdownMenu() {
 
             <SubmenuContainer active={active}>
                 <Submenu name="Home" to="/"/>
-                <Submenu  name="Salas" to="#" icon={<ArrowLeft onClick={handleActiveTwo}/>} />                
-                <Submenu name="Acessar" to="/login"/>
+                <Submenu  name="Salas" to="#" icon={<ArrowLeft onClick={handleActiveTwo}/>} /> 
+                {isLogged ? (
+                    <Submenu name="Registrar" to="/register-message"/> 
+                ) : (
+                    <Submenu name="Acessar" to="/login"/>
+                )}
+
                 {isLogged ?  (
                 <Submenu 
                 name="Logout" 

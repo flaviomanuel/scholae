@@ -23,6 +23,9 @@ function MessagePage(){
 
     const history = useHistory();
 
+    const isLogged = localStorage.getItem('token')
+
+
     const [message, setMessage] = useState([]);
     const [classrooms, setClassrooms] = useState([]);
     
@@ -87,10 +90,12 @@ function MessagePage(){
                 
                 <MessageContainer>
                     <MessageHeader>
+                        { isLogged ? (
                         <DeleteContainer onClick={handleDelete}>
-                              <DeleteButton/> 
-                             <DeleteText>Deletar aviso</DeleteText>
+                            <DeleteButton/> 
+                            <DeleteText>Deletar aviso</DeleteText>
                         </DeleteContainer>
+                        ) : ''}
 
                         <MessageName>
                             {message.name} 
